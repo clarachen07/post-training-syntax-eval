@@ -1,0 +1,16 @@
+# Local environments and caches
+.env/
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Local model weights, data and generated experiment artifacts
+models/
+data/
+outputs/
+logs/
+status/
+manifests/
+reports/
+*.log
