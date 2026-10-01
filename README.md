@@ -6,9 +6,15 @@ The experiment adapts the three-step dependency-parsing protocol from [Matsuda e
 
 ## Repository scope
 
-This repository contains the experiment code, fixed model revisions, prompt construction, scoring, validation tests, and the sequential experiment pipeline. Machine-specific launchers, SSH monitoring, synchronization scripts, model weights, datasets, and generated results are excluded.
+This repository contains the experiment code, fixed model revisions, prompt construction, scoring, validation tests, and the sequential experiment pipeline. Published results and provenance are available in [`results/`](results/). Machine-specific launchers, SSH monitoring, synchronization scripts, model weights, datasets, and raw generation artifacts are excluded.
 
 The upstream [llmpp](https://github.com/megagonlabs/llmpp) implementation is a Git submodule pinned to `f3757d250efc9880ba77651ec0d8587cfd673477`. Its original code and MIT license remain upstream and are available through the submodule.
+
+## Completed results
+
+The full P0 and development-selected P3 test evaluations are complete for all four checkpoints. See the [final report](results/final_zh.md) and [result snapshot](results/README.md) for aggregate scores, paired bootstrap intervals, all 16 development-selection cells, per-sentence strict counts and diagnostics, and sanitized provenance.
+
+The original run covers eight test cells, each with 2,077 unique sentences and 25,094 gold words. Under P3, strict Task 1 UPOS / UAS / LAS are 72.61% / 35.79% / 24.09% for SFT, 68.94% / 35.06% / 23.89% for DPO, and 70.68% / 35.17% / 23.75% for Final. Base P3 exhausted the output budget for every sentence and received strict zero scores due to ambiguous task tables; it should not be interpreted as absence of syntactic knowledge.
 
 ## Setup
 
