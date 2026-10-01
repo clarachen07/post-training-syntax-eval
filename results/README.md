@@ -1,6 +1,6 @@
 # Completed experiment results
 
-Start with the [Chinese final report](final_zh.md). This snapshot records the completed original frozen-checkpoint experiment; it is not a new run with the public configuration.
+Start with the [final report](final.md). This snapshot records the completed original frozen-checkpoint experiment; it is not a new run with the public configuration.
 
 | Files | Contents |
 | --- | --- |
@@ -15,4 +15,4 @@ Each test cell contains 2,077 unique sentences and 25,094 gold words; each devel
 
 Gold token arrays, parsed token tables, raw generated text, input/token IDs, model weights and machine operation logs remain in the original experiment directory and are not included in this snapshot. The public per-sentence files are reduced versions of the original reports, not full prediction files.
 
-`provenance/weights.json` and `provenance/run-config.json` omit private model paths. The environment lock omits one local `packaging` build-path entry whose version was not recorded. All other copied result/provenance values are preserved. Original hashes in `provenance/frozen.json` refer to the original run, whose model paths differ from the portable public configuration. No published frozen manifest should be reused to bypass the audit for a new run.
+`provenance/weights.json` and `provenance/run-config.json` omit private model paths. The environment lock omits one local `packaging` build-path entry whose version was not recorded. Reports are translated into English, with experiment values preserved; `release-manifest.json` records the translations and updated publication hashes. All other copied result/provenance values are preserved. Original hashes in `provenance/frozen.json` refer to the original run, whose model paths differ from the portable public configuration and whose report generator predates the English translation. No published frozen manifest should be reused to bypass the audit for a new run.

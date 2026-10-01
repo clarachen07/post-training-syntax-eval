@@ -250,8 +250,8 @@
       "path": "results/test/P0/dependency.md",
       "source": "reports/test/P0/dependency.md",
       "source_sha256": "a90cceda705ed185e40bb10f253a0b78d522c05aac4ae0bc600202390a4c7868",
-      "published_sha256": "a90cceda705ed185e40bb10f253a0b78d522c05aac4ae0bc600202390a4c7868",
-      "transform": null
+      "published_sha256": "0b04cc0e284833c98e03187687b29f6737230f5c3f9c01b3e3275b26b19b1ef7",
+      "transform": "Translate report text into English; preserve all experiment values."
     },
     {
       "path": "results/test/P0/dpo.json",
@@ -313,8 +313,8 @@
       "path": "results/test/P0/upos.md",
       "source": "reports/test/P0/upos.md",
       "source_sha256": "ccffb0f466b306a560fbacdb11bbd8fc8db1b084b472899745a39ceb1a6a0b7d",
-      "published_sha256": "ccffb0f466b306a560fbacdb11bbd8fc8db1b084b472899745a39ceb1a6a0b7d",
-      "transform": null
+      "published_sha256": "f2c555eaf977098b9f7705d0c56c06d2a94dc5695f6d688e01c2a1d9c9284a8e",
+      "transform": "Translate report text into English; preserve all experiment values."
     },
     {
       "path": "results/test/P3/base.json",
@@ -334,8 +334,8 @@
       "path": "results/test/P3/dependency.md",
       "source": "reports/test/P3/dependency.md",
       "source_sha256": "6834725431cb9458cef0fd032b63faf5be05cdcf6623d611c797703917c3f2ae",
-      "published_sha256": "6834725431cb9458cef0fd032b63faf5be05cdcf6623d611c797703917c3f2ae",
-      "transform": null
+      "published_sha256": "cbdd57c38a653eaa5a68b48f148b8d7e8dab3d55bdd3ec51077ed69336e4bc6c",
+      "transform": "Translate report text into English; preserve all experiment values."
     },
     {
       "path": "results/test/P3/dpo.json",
@@ -397,8 +397,8 @@
       "path": "results/test/P3/upos.md",
       "source": "reports/test/P3/upos.md",
       "source_sha256": "aa39cd82a76d22692506d791cfd176f9c6e00111e7360ee4eabfc603f8bd8b21",
-      "published_sha256": "aa39cd82a76d22692506d791cfd176f9c6e00111e7360ee4eabfc603f8bd8b21",
-      "transform": null
+      "published_sha256": "ceb83260ba6722fb767f0e8e8ddb0e295fcbc2a623c5100e6a062d1d4d38b8ce",
+      "transform": "Translate report text into English; preserve all experiment values."
     },
     {
       "path": "results/provenance/data.json",
@@ -457,11 +457,11 @@
       "transform": "Remove private local model paths from original run configuration."
     },
     {
-      "path": "results/final_zh.md",
+      "path": "results/final.md",
       "source": "reports/final_zh.md",
       "source_sha256": "793e4a943ea8e0d336c90c1a031d747e9b6fd6809f33a8cbf0ef7ea14971f5bf",
-      "published_sha256": "1f4fff3ba96c01288acf6d11cfa077b56bcd55a215f9e19e0db3afc385106c47",
-      "transform": "Update publication links and artifact-scope wording; preserve experiment values."
+      "published_sha256": "c5e405ba0d4d3920921a297c371a70afb879111710c47b6c334f4fc0625ead11",
+      "transform": "Translate report into English and rename to final.md; update publication links and artifact-scope wording; preserve experiment values."
     }
   ]
 }

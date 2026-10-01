@@ -1,8 +1,8 @@
-# EWT r2.15：原文主实验 — 依存分析
+# EWT r2.15: Original-prompt main experiment — Dependency parsing
 
-每模型 2,077 句、25,094 词；冻结权重，BF16，单次生成三步表。
+Each model evaluates 2,077 sentences and 25,094 words with frozen weights and BF16, generating all three task tables in a single response.
 
-数值以百分比表示；严格口径保留固定 gold 分母，作者口径包含其恢复规则。
+Values are percentages. Strict scoring uses fixed gold denominators; author-compatible scoring includes the authors' recovery rules.
 
 | stage | UAS_strict | LAS_strict | LAS_subtypes_strict | UAS_author_F1 | LAS_author_F1 | task3_complete_rate | valid_tree_rate |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -11,9 +11,9 @@
 | dpo | 5.12 | 2.86 | 2.75 | 5.23 | 3.07 | 11.75 | 4.43 |
 | final | 5.51 | 3.01 | 2.96 | 8.23 | 4.69 | 19.79 | 4.09 |
 
-## 相邻阶段差值（百分点；按句配对 bootstrap 95% CI）
+## Adjacent-stage differences (percentage points; paired sentence bootstrap 95% CI)
 
-| 比较 | 指标 | 差值 | 95% CI |
+| Comparison | Metric | Difference | 95% CI |
 | --- | --- | --- | --- |
 | base → sft | task1_upos | +43.99 | [+41.70, +46.32] |
 | base → sft | task3_uas | +4.23 | [+3.76, +4.74] |
@@ -25,10 +25,10 @@
 | dpo → final | task3_uas | +0.39 | [-0.33, +1.10] |
 | dpo → final | task3_las | +0.15 | [-0.31, +0.62] |
 
-## 解释限制
+## Interpretation limits
 
-Base→SFT 同时改变权重与调用外壳，不能解释为纯 SFT 效应。三个 Tülu 阶段模板一致；行为成绩不直接证明内部句法表征变化。冻结推理不等于模型从未接触 EWT，本实验不作无污染结论。
+Base→SFT changes both weights and input wrappers, so it cannot isolate a pure SFT effect. The three Tülu stages use the same template; behavioral scores do not directly establish changes in internal syntactic representations. Frozen inference does not establish that the models have never encountered EWT, and this experiment makes no claim of freedom from data contamination.
 
-原文主实验与开发集优化补充实验分别报告；P3 含 train 示例，属于 few-shot。所有截断和格式失败均保留，未解决的基础设施失败不能标记为完成。
+The original-prompt main experiment and the development-optimized supplementary experiment are reported separately. P3 includes a training example and uses few-shot prompting. All truncations and format failures are retained; unresolved infrastructure failures cannot be marked as complete.
 
-每模型 JSON 包含不含标点的辅助成绩、作者恢复次数及适配异常；sentences.jsonl 包含逐句严格计数和错误诊断。
+Per-model JSON files include auxiliary scores excluding punctuation, counts of author-compatible recovery operations, and evaluator adaptation exceptions. sentences.jsonl files contain per-sentence strict counts and error diagnostics.

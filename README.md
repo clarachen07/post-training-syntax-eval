@@ -12,7 +12,7 @@ The upstream [llmpp](https://github.com/megagonlabs/llmpp) implementation is a G
 
 ## Completed results
 
-The full P0 and development-selected P3 test evaluations are complete for all four checkpoints. See the [final report](results/final_zh.md) and [result snapshot](results/README.md) for aggregate scores, paired bootstrap intervals, all 16 development-selection cells, per-sentence strict counts and diagnostics, and sanitized provenance.
+The full P0 and development-selected P3 test evaluations are complete for all four checkpoints. See the [final report](results/final.md) and [result snapshot](results/README.md) for aggregate scores, paired bootstrap intervals, all 16 development-selection cells, per-sentence strict counts and diagnostics, and sanitized provenance.
 
 The original run covers eight test cells, each with 2,077 unique sentences and 25,094 gold words. Under P3, strict Task 1 UPOS / UAS / LAS are 72.61% / 35.79% / 24.09% for SFT, 68.94% / 35.06% / 23.89% for DPO, and 70.68% / 35.17% / 23.75% for Final. Base P3 exhausted the output budget for every sentence and received strict zero scores due to ambiguous task tables; it should not be interpreted as absence of syntactic knowledge.
 
@@ -115,7 +115,7 @@ The three data-dependent protocol tests are skipped until data has been prepared
 
 Base → SFT changes both weights and input wrappers and cannot isolate a pure SFT causal effect. Checkpoint behavior scores do not directly establish changes in internal syntactic representations. Frozen inference does not establish absence of prior EWT exposure. P0 and the development-selected extension must be reported separately, and P0 → P3 cannot attribute improvements to the demonstration alone because formatting rules and the tag inventory also change.
 
-The public configuration replaces machine-specific model paths with relative paths. The core experiment source is preserved from the completed local evaluation; publication does not alter that original evaluation or its frozen artifacts.
+The public configuration replaces machine-specific model paths with relative paths. The inference and scoring code is preserved from the completed local evaluation; report text and generation now use English. Publication does not alter the original evaluation or its frozen artifacts.
 
 Reference: Hiroshi Matsuda, Chunpeng Ma, and Masayuki Asahara. 2025. [Step-by-step Instructions and a Simple Tabular Output Format Improve the Dependency Parsing Accuracy of LLMs](https://aclanthology.org/2025.iwpt-1.2/). IWPT / SyntaxFest 2025.
 
